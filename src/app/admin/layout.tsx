@@ -2,11 +2,15 @@
 import { usePathname } from "next/navigation"
 import Sidebar from "./components/navbar/sidebar"
 import { NextUIProvider } from "@nextui-org/system";
+import { Toaster } from "react-hot-toast";
 
 const Layout = ({children}: any) => {
     const pathname = usePathname();
   return (
     <>
+    <Toaster
+      position="top-right"
+    />
         
 
         {pathname !=='/admin/login' && <Sidebar/>}

@@ -21,14 +21,14 @@ export const login = async(body: any) => {
         })
         if(!user){
             return{
-                message: 'Invalid credentials',
+                error: 'Invalid credentials',
                 status: STATUSCODE.HTTPNOTFOUND
             }
         }
         const passwordMath = await bcrypt.compare(password, user.password);
         if(!passwordMath){
             return{
-                message: 'Invalid credentials',
+                error: 'Invalid credentials',
                 status: STATUSCODE.HTTPNOTFOUND
             }
         }
